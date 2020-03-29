@@ -50,13 +50,29 @@
           要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
     
     工作区与暂存区
+    管理修改
+    撤销修改
     
     代码： git status                   掌握工作区的状态
            git diff <file>              查看工作区与暂存区的差异
            git diff --cached <file>     查看暂存区与版本库的差异
-           git diff HEAD -- <file>         查看工作区与版本库最新版本的差异
+           git diff HEAD -- <file>      查看工作区与版本库最新版本的差异
+           cat readme.txt               查看文件内容
+           
+           git restore <file>           discard changes in working directory
+                把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+                一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+                一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+           
+
+总之，就是让这个文件回到最近一次git commit或git add时的状态。
+
+           
+
        
-    管理修改
+    
     
 自定义Git
     
