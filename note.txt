@@ -43,8 +43,15 @@
 
      按 Esc 键退出编辑模式，英文模式下输入 :qa! ，然后回车。
      
-    代码： git log                       显示从最近到最远的提交日志
-           git log --pretty=oneline      一行一行显示
+    代码： git log                          显示从最近到最远的提交日志
+           git log --pretty=oneline         一行一行显示
+           git reset --hard HEAD^           回退到上一个版本
+           git reset --hard HEAD~100        回退到上一百个版本
+           git reflog                       记录你的每一次操作，用于版本恢复
+           
+    总结：HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+          穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+          要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
            
 
 Git is a distributed version control system.
