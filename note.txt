@@ -28,6 +28,20 @@
 
     版本回退
     
-      
+    如果commit（提交）比较多，git log 的内容就会比较多；当满屏放不下，就会显示冒号，回车（往下滚一行）、
+    空格（往下滚一页）可以继续查看剩余内容；退出：英文状态下 按 q 可以退出git log 状态。
+    
+    git commit: 当该命令没有带-m参数时，会跳出commit change log （COMMIT_EDITMSG）界面，这个是vi编辑器（也有可能是vim编辑器），
+    和linux的使用时一样的，因为涉及到是否要保存编辑内容，所以退出命令有多种。
+     2.1 保存并退出：
+    （1）按 Esc 键退出编辑模式，英文模式下输入 :wq ，然后回车(write and quit)。
+
+    （2）按 Esc 键退出编辑模式，大写英文模式下输入 ZZ ，然后回车。
+
+     2.2 不保存退出：
+     按 Esc 键退出编辑模式，英文模式下输入 :q! ，然后回车。
+
+     按 Esc 键退出编辑模式，英文模式下输入 :qa! ，然后回车。
+
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
