@@ -33,15 +33,19 @@
     
     git commit: 当该命令没有带-m参数时，会跳出commit change log （COMMIT_EDITMSG）界面，这个是vi编辑器（也有可能是vim编辑器），
     和linux的使用时一样的，因为涉及到是否要保存编辑内容，所以退出命令有多种。
-     2.1 保存并退出：
+    1 保存并退出：
     （1）按 Esc 键退出编辑模式，英文模式下输入 :wq ，然后回车(write and quit)。
 
     （2）按 Esc 键退出编辑模式，大写英文模式下输入 ZZ ，然后回车。
 
-     2.2 不保存退出：
+    2 不保存退出：
      按 Esc 键退出编辑模式，英文模式下输入 :q! ，然后回车。
 
      按 Esc 键退出编辑模式，英文模式下输入 :qa! ，然后回车。
+     
+    代码： git log                       显示从最近到最远的提交日志
+           git log --pretty=oneline      一行一行显示
+           
 
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
