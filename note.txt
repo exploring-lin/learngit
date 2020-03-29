@@ -69,7 +69,10 @@
                 总之，就是让这个文件回到最近一次git commit或git add时的状态。
                 
             git restore --staged <file>   暂存区的修改撤销掉（unstage），重新放回工作区
-            
+     
+    删除文件
+            git rm <file>                 删除文件
+            git restore <file>            文件误删后，可以把误删的文件恢复到最新版本。
    
 自定义Git
     
