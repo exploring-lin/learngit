@@ -4,6 +4,15 @@
       cd learngit           进入该文件夹
       pwd                   显示当前目录
       git init              把当前目录变成Git可以管理的仓库
+      git add note.txt      把文件添加到仓库
+      git commit -m "wrote a note file"   -m后面输入的是本次提交的说明
+      
+总结：初始化一个Git仓库，使用git init命令。
+      添加文件到Git仓库，分两步：
+      1. 使用命令git add <file>, 可以反复使用多次，添加多个文件。
+      2. 使用命令git commit -m <message>,完成。
+
+       
 
 
 
