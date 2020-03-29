@@ -51,14 +51,14 @@
     
     工作区与暂存区
     管理修改
-    撤销修改
     
     代码： git status                   掌握工作区的状态
            git diff <file>              查看工作区与暂存区的差异
            git diff --cached <file>     查看暂存区与版本库的差异
            git diff HEAD -- <file>      查看工作区与版本库最新版本的差异
            cat readme.txt               查看文件内容
-           
+    
+    撤销修改       
            git restore <file>           discard changes in working directory
                 把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
 
@@ -70,12 +70,7 @@
                 
             git restore --staged <file>   暂存区的修改撤销掉（unstage），重新放回工作区
             
-
-           
-
-       
-    
-    
+   
 自定义Git
     
     配置别名
