@@ -23,9 +23,10 @@
 时光穿梭机
 代码： git status                   掌握工作区的状态
        git diff <file>              查看工作区与暂存区的差异
-       git diff --cached <file>     查看工作区与版本库的差异
+       git diff --cached <file>     查看暂存区与版本库的差异
+       git diff HEAD <file>         查看工作区与版本库最新版本的差异
 
 
       
 Git is a distributed version control system.
-Git is free software.
+Git is free software distributed under the GPL.
