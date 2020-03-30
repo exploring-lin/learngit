@@ -99,9 +99,36 @@
                    git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：  
                    git branch dev
                    git checkout dev
-                   git branch                      查看当前分支
+                   
+                   git switch -c dev               创建并切换到新的dev分支
+                   git switch master               切换到已有的master分支
 
-    
+
+                   
+                   git branch                      查看当前分支
+                   git merge dev                   把dev分支的工作成果合并到master分支上
+                                                   git merge命令用于合并指定分支到当前分支。
+                   Fast-forward                    “快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
+                   git branch -d dev               删除分支dev 
+        
+        小结
+        Git鼓励大量使用分支：
+
+        查看分支：git branch
+
+        创建分支：git branch <name>
+
+        切换分支：git checkout <name>或者git switch <name>
+
+        创建+切换分支：git checkout -b <name>或者git switch -c <name>
+
+        合并某分支到当前分支：git merge <name>
+
+        删除分支：git branch -d <name>
+        
+        删除远程分支：先通过git branch -d <branch name>删除本地分支，再通过git push origin :<branch name>删除远程分支
+                      git push origin -d <branch name>好像效果一样
+
 自定义Git
     
     配置别名
