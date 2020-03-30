@@ -132,6 +132,16 @@
     解决冲突
         代码：git merge feature1   出现冲突；Automatic merge failed; fix conflicts and then commit the result.
                                    修改后，再提交。
+              git log --graph --pretty=oneline --abbrev-commit       用带参数的git log也可以看到分支的合并情况。
+              git branch -d feature1    删除分支feature1
+              
+        小结：
+        当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+
+        解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+
+        用git log --graph命令可以看到分支合并图。
+
 自定义Git
     
     配置别名
