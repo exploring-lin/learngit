@@ -128,7 +128,10 @@
         
         删除远程分支：先通过git branch -d <branch name>删除本地分支，再通过git push origin :<branch name>删除远程分支
                       git push origin -d <branch name>好像效果一样
-
+    
+    解决冲突
+        代码：git merge feature1   出现冲突；Automatic merge failed; fix conflicts and then commit the result.
+                                   修改后，再提交。
 自定义Git
     
     配置别名
@@ -143,8 +146,4 @@ Git is a distributed version control system.
 Git is free software distributed under the GPL.
 Git has a mutable index called stage.
 Git tracks changes of files.
-<<<<<<< HEAD
-Creating a new branch is quick & simple.
-=======
-Creating a new branch is quick AND simple.
->>>>>>> feature1
+Creating a new branch is quick and simple.
