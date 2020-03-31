@@ -162,6 +162,14 @@
               git stash drop       恢复工作现场，同时把stash内容也删了
               可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令git stash apply stash@{0}
               
+              stash,就像是把当前的WIP压栈，(这里WIP的含义就是所有修改了但未commit的数据)，然后再一个一个取出来,
+              默认的git stash pop是按照自栈顶开始的顺序依次出栈,也可以使用git stash pop stash@{num}的方式取出指定的WIP 
+              我们可以用git stash list查看当前压栈了多少个WIP
+
+              注意:git stash不能将未被追踪的文件(untracked file)压栈,也就是从未被git add过的文件,
+              也就是你在使用git status命令看到的提示Untracked files所列出的文件,
+              所以在git stash之前一定要用git status确认没有Untracked files
+
               git cherry-pick <commit>   复制一个特定的提交到当前分支,注意，必须在当前分支的工作区干净的情况下进行。
           
         小结
