@@ -25,3 +25,25 @@ $ git add Git_learning.md
 $ git commit -m "wroto a learning file"
 ```
 
+（1）简单解释一下`git commit`命令，`-m`后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
+
+（2）用`ls`或者`dir`命令查看当前目录的文件。
+
+##### 3  掌握工作区的状态
+
+（1）要随时掌握工作区的状态，使用`git status`命令。
+
+（2）如果`git status`告诉你有文件被修改过，用`git diff`可以查看修改内容。
+
+```bash
+$ git diff
+$ git diff HEAD
+$ git diff --cached
+```
+
+​	1）比较工作区和暂存区的修改；
+
+​	2）比较工作区和上一次commit后的修改；
+
+​    3）比较暂存区和上一次commit后的修改。
+
