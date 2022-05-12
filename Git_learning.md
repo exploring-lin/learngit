@@ -47,3 +47,19 @@ $ git diff --cached
 
 ​    3）比较暂存区和上一次commit后的修改。
 
+##### 4  版本回退
+
+```bash
+$ git log
+$ git log --pretty=oneline
+```
+
+​	（1）`git log`命令显示从最近到最远的提交日志。
+
+​	（2）如果嫌输出信息太多，看得眼花缭乱的，可以试试加上`--pretty=oneline`参数。
+
+
+
+
+
+https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192
