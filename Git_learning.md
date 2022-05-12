@@ -58,6 +58,21 @@ $ git log --pretty=oneline
 
 ​	（2）如果嫌输出信息太多，看得眼花缭乱的，可以试试加上`--pretty=oneline`参数。
 
+```bash
+$ git reset --hard HEAD^
+$ git log
+$ git reset --hard 1094a
+$ git reflog
+```
+
+​	（1）上一个版本就是`HEAD^`，上上一个版本就是`HEAD^^`，当然往上100个版本写100个`^`比较容易数不过来，所以写成`HEAD~100`。
+
+​	（2）穿梭前，用`git log`可以查看提交历史，以便确定要回退到哪个版本。
+
+​	（3）Git允许我们在版本的历史之间穿梭，使用命令`git reset --hard commit_id`。
+
+​	（4）重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
+
 
 
 
