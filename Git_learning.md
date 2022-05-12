@@ -73,8 +73,22 @@ $ git reflog
 
 ​	（4）重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
 
+##### 5  撤销修改
+
+​	（1）use "git restore <file>..." to discard changes in working directory.
+
+​		把文件在工作区的修改全部撤销，这里有两种情况：
+
+​		1）一种是文件自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+​		2）一种是文件已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+​		总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
+
+​	（2）use "git restore --staged <file>..." to unstage.
+
+##### 6  删除文件
 
 
 
-
-https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192
+https://www.liaoxuefeng.com/wiki/896043488029600/900002180232448
