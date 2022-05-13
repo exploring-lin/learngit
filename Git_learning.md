@@ -1,5 +1,11 @@
 **安装Git**
 
+​	**文章背景：**
+
+
+
+[TOC]
+
 ##### 1  配置文件
 
 ​	Git安装完成后，还需要最后一步设置，在命令行输入：
@@ -18,7 +24,9 @@ $ git config user.email
 
 ​	（2）如果想检查一下看看有没有设置成功，可以再输入git config user.name然后回车，如果设置成功了就会显示你刚刚设置的用户名；同理，可以用git config user.email来查看你设置的邮箱。
 
-##### 2  把一个文件放到Git仓库
+##### 2  管理文件
+
+###### 2.1  把一个文件放到Git仓库
 
 ```bash
 $ git add Git_learning.md
@@ -29,7 +37,7 @@ $ git commit -m "wroto a learning file"
 
 （2）用`ls`或者`dir`命令查看当前目录的文件。
 
-##### 3  掌握工作区的状态
+###### 2.2  掌握工作区的状态
 
 （1）要随时掌握工作区的状态，使用`git status`命令。
 
@@ -47,7 +55,31 @@ $ git diff --cached
 
 ​    3）比较暂存区和上一次commit后的修改。
 
-##### 4  版本回退
+###### 2.3  撤销修改
+
+​	（1）use "git restore <file>..." to discard changes in working directory.
+
+​		把文件在工作区的修改全部撤销，这里有两种情况：
+
+​		1）一种是文件自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+​		2）一种是文件已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+​		总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
+
+​	（2）use "git restore --staged <file>..." to unstage.
+
+###### 2.4  删除文件
+
+```bash
+$ git rm test.txt
+```
+
+​	（1）命令`git rm`用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失**最近一次提交后你修改的内容**。
+
+​	（2）`git rm test.txt` 相当于是删除工作目录中的test.txt文件，并把此次删除操作提交到了暂存区。
+
+##### 3  版本回退
 
 ```bash
 $ git log
@@ -73,21 +105,64 @@ $ git reflog
 
 ​	（4）重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
 
-##### 5  撤销修改
+##### 4  远程仓库
 
-​	（1）use "git restore <file>..." to discard changes in working directory.
+###### 4.1  GitHub账号的设置
 
-​		把文件在工作区的修改全部撤销，这里有两种情况：
+​	（1）创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
 
-​		1）一种是文件自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+```bash
+$ ssh-keygen -t rsa -C "youremail@example.com"
+```
 
-​		2）一种是文件已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+​	你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。
 
-​		总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
+​	如果一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。
 
-​	（2）use "git restore --staged <file>..." to unstage.
+​	（2）登陆GitHub，打开“Settings”，“SSH and GPG keys”页面。然后，点“New SSH key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。点“Add Key”，你就应该看到已经添加的Key。
 
-##### 6  删除文件
+###### 4.2  删除远程库
+
+```bash
+$ git remote -v
+$ git remote rm origin
+```
+
+​	（1）`git remote -v`查看远程库信息。
+
+​	（2）删除远程库，可以用`git remote rm `命令。此处的“删除”其实是解除了本地和远程的绑定关系，并不是物理上删除了远程库。远程库本身并没有任何改动。要真正删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。
+
+###### 4.3  从远程库克隆
+
+```bash
+$ git clone git@github.com:michaelliao/gitskills.git
+```
+
+​	（1）Git支持多种协议，包括`https`，但`ssh`协议速度最快。
+
+##### 5  分支管理
+
+###### 5.1  创建与合并分支
+
+```bash
+$ git switch -c dev
+$ git branch
+$ git switch master
+```
+
+​	（1）创建并切换到新的`dev`分支。
+
+​	（2）`git branch`命令会列出所有分支，当前分支前面会标一个`*`号。
+
+​	（3）直接切换到已有的`master`分支。
+
+
+
+
+
+
+
+
 
 
 
