@@ -156,7 +156,7 @@ $ git switch master
 
 ​	（3）直接切换到已有的`master`分支。
 
-
+Creating a new branch is quick.
 
 
 
