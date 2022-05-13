@@ -148,6 +148,8 @@ $ git clone git@github.com:michaelliao/gitskills.git
 $ git switch -c dev
 $ git branch
 $ git switch master
+$ git merge dev
+$ git branch -d dev
 ```
 
 ​	（1）创建并切换到新的`dev`分支。
@@ -156,7 +158,13 @@ $ git switch master
 
 ​	（3）直接切换到已有的`master`分支。
 
-Creating a new branch is quick.
+​	（4）`git merge`命令用于合并指定分支到当前分支。
+
+​	（5）合并完成后，就可以放心地删除`dev`分支了。
+
+​	（6）创建分支：`git branch `。
+
+#### 解决冲突
 
 
 
@@ -166,4 +174,4 @@ Creating a new branch is quick.
 
 
 
-https://www.liaoxuefeng.com/wiki/896043488029600/900002180232448
+https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344
