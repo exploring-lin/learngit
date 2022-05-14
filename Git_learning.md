@@ -140,6 +140,20 @@ $ git clone git@github.com:michaelliao/gitskills.git
 
 ​	（1）Git支持多种协议，包括`https`，但`ssh`协议速度最快。
 
+###### 4.4  关联远程库
+
+```bash
+$ git remote add origin git@github.com:exploring-lin/learngit.git
+```
+
+​	（1）要关联一个远程库，使用命令`git remote add origin git@server-name:path/repo-name.git`。
+
+​	（2）关联一个远程库时必须给远程库指定一个名字，`origin`是默认习惯命名。
+
+​	（3）关联后，使用命令`git push -u origin master`第一次推送master分支的所有内容。
+
+​	（4）此后，每次本地提交后，只要有必要，就可以使用命令`git push origin master`推送最新修改。
+
 ##### 5  分支管理
 
 ###### 5.1  创建与合并分支
@@ -166,11 +180,13 @@ $ git branch -d dev
 
 ###### 5.2  解决冲突
 
-Creating a new branch is quick AND simple.
+```bash
+$ git log --graph --pretty=oneline --abbrev-commit
+```
 
-Creating a new branch is quick and simple.
+​	（1）用带参数的`git log`也可以看到分支的合并情况。
 
-
+​	（2）当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
 
 
 
