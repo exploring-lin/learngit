@@ -188,6 +188,21 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 ​	（2）当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
 
-123456
+###### 5.3  分支策略
+
+```bash
+$ git merge --no-ff -m "merge with no-ff" dev
+$ git log --graph --pretty=oneline --abbrev-commit
+```
+
+​	（1）合并分支时，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并。
+
+​	（2）合并后，我们用`git log`看看分支历史。
+
+![image-20220514111452726](C:\Users\Sam_Lin\AppData\Roaming\Typora\typora-user-images\image-20220514111452726.png)
+
+
+
+
 
 https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344
