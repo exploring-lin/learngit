@@ -221,9 +221,24 @@ $ git cherry-pick 4c805e2
 
 ###### 5.5  Feature分支
 
+```bash
+$ git branch -d feature-vulcan
+$ git branch -D feature-vulcan
+```
+
+​	（1）开发一个新feature，最好新建一个分支；
+
+​	（2）如果要丢弃一个没有被合并过的分支，可以通过`git branch -D `强行删除。
+
+###### 5.6  多人协作
+
+```
+$ git remote
+$ git remote -v
+$ git push origin master
+```
+
 ​	
-
-
 
 
 
