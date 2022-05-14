@@ -8,7 +8,7 @@
 
 ##### 1  配置文件
 
-​	Git安装完成后，还需要最后一步设置，在命令行输入：
+​	Git安装完成后，还需要最后一步设置，在命令行内输入：
 
 ```bash
 $ git config --global user.name "Your Name"
