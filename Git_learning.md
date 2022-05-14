@@ -201,6 +201,28 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 ![image-20220514111452726](C:\Users\Sam_Lin\AppData\Roaming\Typora\typora-user-images\image-20220514111452726.png)
 
+###### 5.4  bug分支
+
+```bash
+$ git stash
+$ git merge --no-ff -m "merged bug fix 101" issue-101
+$ git stash list
+$ git stash apply
+$ git stash pop
+$ git stash apply stash@{0}
+$ git cherry-pick 4c805e2
+```
+
+​	（1）当手头工作没有完成时，先把工作现场`git stash`一下，然后去修复bug，修复后，再`git stash pop`，回到工作现场；
+
+​	（2）修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+
+​    （3）在master分支上修复的bug，想要合并到当前dev分支，可以用`git cherry-pick `命令，把bug提交的修改“复制”到当前分支，避免重复劳动。
+
+###### 5.5  Feature分支
+
+​	
+
 
 
 
