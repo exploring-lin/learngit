@@ -188,6 +188,6 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 ​	（2）当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
 
-
+123
 
 https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344
