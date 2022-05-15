@@ -281,9 +281,49 @@ $ git log --graph --pretty=oneline --abbrev-commit
 
 ​	tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。
 
+###### 6.1  创建标签
 
+```bash
+$ git tag v1.0
+$ git tag
+$ git log --pretty=oneline --abbrev-commit
+$ git tag v0.9 f52c633
+$ git tag -a v0.1 -m "version 0.1 released" 1094adb
+$ git show v0.9
+```
 
-​	
+​	（1）命令`git tag `用于新建一个标签，默认为`HEAD`，也可以指定一个commit id；
+
+​	（2）命令`git tag`可以查看所有标签。
+
+​	（3）命令`git tag -a v1.0  -m "blablabla..."`可以指定标签信息；
+
+​	（4）命令`git show `可以看到说明文字。
+
+###### 6.2  操作标签
+
+```bash
+$ git tag -d v0.1
+$ git push origin v1.0
+$ git push origin --tags
+$ git push origin :refs/tags/v0.9
+```
+
+​	（1）命令`git tag -d `可以删除一个本地标签；
+
+​	（2）命令`git push origin `可以推送一个本地标签；
+
+​	（3）命令`git push origin --tags`可以推送全部未推送过的本地标签；
+
+​	（4）命令`git push origin :refs/tags/`可以删除一个远程标签。
+
+​	如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除，然后，从远程删除。
+
+##### 7  自定义Git
+
+###### 7.1  忽略特殊文件
+
+###### 7.2  配置别名
 
 **参考资料：**
 
