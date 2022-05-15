@@ -232,14 +232,50 @@ $ git branch -D feature-vulcan
 
 ###### 5.6  多人协作
 
-```
+```bash
 $ git remote
 $ git remote -v
 $ git push origin master
 ```
 
-​	
+```bash
+git switch -c my-test  //在当前分支下创建my-test的本地分支
+git push origin my-test  //将my-test分支推送到远程
+git branch --set-upstream-to=origin/my-test my-test //将本地分支my-test关联到远程分支my-test上   
+git branch -a //查看远程分支
+```
+
+```bash
+$ git switch -c dev origin/dev
+$ git push origin dev
+$ git pull
+$ git branch --set-upstream-to=origin/dev dev
+```
+
+​	因此，多人协作的工作模式通常是这样：
+
+1. 首先，可以试图用`git push origin `推送自己的修改；
+
+2. 如果推送失败，则因为远程分支比你的本地更新，需要先用`git pull`试图合并；
+
+   如果`git pull`提示`no tracking information`，则说明本地分支和远程分支的链接关系没有创建，用命令`git branch --set-upstream-to  origin/`。
+
+3. 如果合并有冲突，则解决冲突，并在本地提交；
+
+4. 没有冲突或者解决掉冲突后，再用`git push origin `推送就能成功！
+
+这就是多人协作的工作模式，一旦熟悉了，就非常简单。
+
+###### 5.7  Rebase
 
 
 
-https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344
+
+
+
+
+**参考资料：**
+
+[1] [Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+
+[2] [Git创建远程分支](https://blog.csdn.net/github_38395241/article/details/77198673)
