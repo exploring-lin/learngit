@@ -268,16 +268,27 @@ $ git branch --set-upstream-to=origin/dev dev
 
 ###### 5.7  Rebase
 
-123
+​	（1）Rebase操作的特点：把分叉的提交历史“整理”成一条直线，看上去更直观。缺点是本地的分叉提交已经被修改过了。
 
-456
+​	（2）如果git pull后提示有冲突，先不管冲突的代码，因为修改后执行rebase还是变回有冲突的代码。先执行git add file和 git commit -m 'xxx'。再执行git rebase， 终端提示：Resolve all conflicts manually, mark them as resolved with "git add/rm <conflicted_files>", then run "git rebase --continue”。这时再手动修改代码解决冲突，执行git add，再执行 git rebase --continue 就有效果了。这时直接git push 到远程仓库即可。
 
-789
+```bash
+$ git rebase
+$ git log --graph --pretty=oneline --abbrev-commit
+```
 
-101112
+##### 6  标签管理
+
+​	tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起。
+
+
+
+​	
 
 **参考资料：**
 
 [1] [Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
 
 [2] [Git创建远程分支](https://blog.csdn.net/github_38395241/article/details/77198673)
+
+[3] [rebase](http://gitbook.liuhui998.com/4_2.html)
