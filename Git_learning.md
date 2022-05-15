@@ -243,7 +243,6 @@ git switch -c my-test  //在当前分支下创建my-test的本地分支
 git push origin my-test  //将my-test分支推送到远程
 git branch --set-upstream-to=origin/my-test my-test //将本地分支my-test关联到远程分支my-test上   
 git branch -a //查看远程分支
-参见：https://blog.csdn.net/github_38395241/article/details/77198673
 ```
 
 ```bash
@@ -271,4 +270,10 @@ $ git branch --set-upstream-to=origin/dev dev
 
 ​	
 
-https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344
+
+
+**参考资料：**
+
+[1] [Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+
+[2] [Git创建远程分支](https://blog.csdn.net/github_38395241/article/details/77198673)
